@@ -1,0 +1,5 @@
+alpha = _{ 'a'..'z' }
+ident = { (alpha | "_" )+ }
+ws = _{ (" " | NEWLINE )+ }
+def = { ident }
+data = { ws? ~ (def ~ (ws | EOI) )+ }
