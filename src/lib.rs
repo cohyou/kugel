@@ -1,3 +1,8 @@
+mod data;
+pub use data::{
+    Data,
+};
+
 #[cfg(test)]
 mod tests {
     #[test]
