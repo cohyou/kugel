@@ -1,5 +1,5 @@
 alpha = _{ 'a'..'z' }
-ident = { (alpha | "_" )+ }
+ident = _{ (alpha | "_" )+ }
 ws = _{ (" " | NEWLINE )+ }
 def = { ident }
 data = { ws? ~ (def ~ (ws | EOI) )+ }

@@ -1,18 +1,18 @@
 use std::borrow::Cow;
-pub enum Data<'a> {
+pub enum Inst<'a> {
     One(Cow<'a, str>),
     Labels(Vec<Cow<'a, str>>),
 }
 
-impl<'a> Data<'a> {
+impl<'a> Inst<'a> {
     pub fn one(label_name: &'a str) -> Self {
         Self::One(label_name.into())
     }
 }
 use std::ops::Add;
 
-impl<'a> Add for Data<'a> {
-    type Output = Data<'a>;
+impl<'a> Add for Inst<'a> {
+    type Output = Inst<'a>;
     fn add(self, rhs: Self) -> Self::Output {
         match self {
             Self::One(s1) => {
@@ -30,5 +30,5 @@ impl<'a> Add for Data<'a> {
 
 #[test]
 fn test_add() {
-    let _ = Data::one("foo") + Data::one("bar");
+    let _ = Inst::one("foo") + Inst::one("bar");
 }

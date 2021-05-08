@@ -1,6 +1,6 @@
 mod data;
 pub use data::{
-    Data,
+    Inst,
 };
 
 #[cfg(test)]
